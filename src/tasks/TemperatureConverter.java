@@ -37,6 +37,10 @@ public class TemperatureConverter {
                     System.out.println("Конвертируем из Цельсия в Фаренгейт");
                     celsiusToFahrenheit();
                     break;
+                case 2:
+                    System.out.println("Конвертируем из Фаренгейта в Цельсия");
+                    fahrenheitToCelsius();
+                    break;
                 default:
                     System.out.println("Выберите числа из списка");
             }
@@ -48,7 +52,16 @@ public class TemperatureConverter {
         System.out.print("Введите температуру (Celsius): ");
         double tCelsius = scanner.nextDouble(); scanner.nextLine();
         double tFahrenheit = 0;
+        //this code
         System.out.printf("Результат (Fahrenheit): %.1f%n",tFahrenheit);
+    }
+
+    private void fahrenheitToCelsius() {
+        System.out.print("Введите температуру (Fahrenheit): ");
+        double tFahrenheit = scanner.nextDouble(); scanner.nextLine();
+        double tCelsius = 0;
+        //this code
+        System.out.printf("Результат (Celsius): %.1f%n",tCelsius);
     }
     
     

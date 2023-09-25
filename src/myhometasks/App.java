@@ -5,6 +5,7 @@
  */
 package myhometasks;
 
+import tasks.NumberParser;
 import java.util.Scanner;
 import tasks.TemperatureConverter;
 
@@ -13,13 +14,19 @@ import tasks.TemperatureConverter;
  * @author admin
  */
 public class App {
-    private Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
+
+    public App() {
+        this.scanner = new Scanner(System.in);
+    }
+    
     public void run() {
         boolean repeat = true;
         do{
             System.out.println("Выберите задачу:");
             System.out.println("0. Закончить программу");
             System.out.println("1. Конверетер температуры");
+            System.out.println("2. Парсер числа");
             int task = scanner.nextInt(); scanner.nextLine();
             switch (task) {
                 case 0:
@@ -32,11 +39,17 @@ public class App {
                     temperatureConverter = new TemperatureConverter(scanner);
                     temperatureConverter.doConvert();
                     break;
+                case 2:
+                    System.out.println("Выбрана задача 2");
+                    NumberParser numberParser = new NumberParser(scanner);
+                    numberParser.doParse();
+                    break;
                 default:
                     throw new AssertionError();
             }
         }while(repeat);
         System.out.println("До свидания!");
     }
+
     
 }
