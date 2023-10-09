@@ -5,6 +5,8 @@
  */
 package myhometasks;
 
+import tasks.WeatherInYear;
+import tasks.ArrayDemo;
 import tasks.CreateBooksArray;
 import tasks.NumberParser;
 import java.util.Scanner;
@@ -29,6 +31,8 @@ public class App {
             System.out.println("1. Конверетер температуры");
             System.out.println("2. Парсер числа");
             System.out.println("3. Создание массива книг");
+            System.out.println("4. Задача с массивом целых чисел");
+            System.out.println("5. Температура в году");
             int task = scanner.nextInt(); scanner.nextLine();
             switch (task) {
                 case 0:
@@ -36,25 +40,39 @@ public class App {
                     repeat = false;
                     break;
                 case 1:
-                    System.out.println("Выбрана задача 1");
+                    System.out.println("--- Выбрана задача 1 ---");
                     TemperatureConverter temperatureConverter;
                     temperatureConverter = new TemperatureConverter(scanner);
                     temperatureConverter.doConvert();
                     break;
                 case 2:
-                    System.out.println("Выбрана задача 2");
+                    System.out.println("--- Выбрана задача 2 ---");
                     NumberParser numberParser = new NumberParser(scanner);
                     numberParser.doParse();
                     break;
                 case 3:
-                    System.out.println("Выбрана задача 3");
+                    System.out.println("--- Выбрана задача 3 ---");
                     CreateBooksArray createBooksArray;
                     createBooksArray = new CreateBooksArray();
                     createBooksArray.doCreateArray();
                     
                     break;
+                case 4:
+                    System.out.println("--- Выбрана задача 4 ---");
+                    ArrayDemo arrayDemo;
+                    arrayDemo = new ArrayDemo(scanner);
+                    arrayDemo.runDemo();
+                    System.out.println("--- конец задачи 4 ---");
+                    break;
+                case 5:
+                    System.out.println("--- Выбрана задача 5 ---");
+                    WeatherInYear weatherInYear;
+                    weatherInYear = new WeatherInYear(scanner);
+                    weatherInYear.runTask();
+                    System.out.println("--- конец задачи 5 ---");
+                    break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("Выберите номер из списка!");
             }
         }while(repeat);
         System.out.println("До свидания!");
